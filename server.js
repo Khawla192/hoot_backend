@@ -9,6 +9,8 @@ const logger = require('morgan');
 // Import the controller file
 const testJwtRouter = require('./controllers/test-jwt');
 const authRouter = require('./controllers/auth');
+const usersRouter = require('./controllers/users');
+const hootsRouter = require('./controllers/hoots');
 
 // MIDDLEWARE
 app.use(cors());
@@ -18,6 +20,8 @@ app.use(logger('dev'));
 // ROUTES
 app.use('/auth', authRouter);
 app.use('/test-jwt', testJwtRouter);
+app.use('/users', usersRouter);
+app.use('/hoots', hootsRouter);
 
 // LISTENER
 app.listen(3000, () => {
